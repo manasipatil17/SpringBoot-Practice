@@ -1,0 +1,5 @@
+package com.example.SpringInItializer_Project.controller;
+
+public class MyController {
+
+}
