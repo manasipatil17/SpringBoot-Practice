@@ -17,4 +17,14 @@ public class StudentService {
 		
 		return msg;
 	}
+	
+	public String deleteData(int id) {
+		String msg=dao.deleteData(id);
+		return msg;
+	}
+	
+	public String updateData(Student s,int id) {
+		String msg=dao.updateData(s,id);
+		return msg;
+	}
 }

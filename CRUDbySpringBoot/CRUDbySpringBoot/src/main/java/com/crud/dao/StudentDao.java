@@ -24,4 +24,31 @@ public class StudentDao {
 		ss.close();
 		return "Data is inserted";
 	}
+	
+	public String deleteData(int id) {
+		Session ss= sf.openSession();
+		Transaction ts =ss.beginTransaction();
+		
+		Student s1=ss.get(Student.class, id);
+		ss.remove(s1);
+		ts.commit();
+		ss.close();
+		
+		
+		return "Data is deleted";
+	}
+	
+	public String updateData(Student s, int id) {
+		Session ss=sf.openSession();
+		Transaction ts=ss.beginTransaction();
+		
+		Student s1=ss.get(Student.class, id);
+		s1.setName(s.getName());
+		s1.setCity(s.getCity());
+		
+		ss.merge(s1);
+		ts.commit();
+		ss.close();
+		return "Data updated";
+	}
 }
