@@ -1,7 +1,0 @@
-package com.example.SpringInItializer_Project.controller;
-
-@RestController
-public class MyController {
-
-	
-}
