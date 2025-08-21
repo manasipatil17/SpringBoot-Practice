@@ -2,6 +2,7 @@ package com.crud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,5 +37,12 @@ public class StudentController {
 	public String updateData( @RequestBody Student s,@PathVariable int id) {
 		String msg= service.updateData(s, id);
 		return msg;
+	}
+	
+	@GetMapping("/fetchSingleRecord/{id}")
+	public Student fetchSingleRecord(@PathVariable int id) {
+		Student s= service.fetchSingleRecord(id);
+		
+		return s;
 	}
 }

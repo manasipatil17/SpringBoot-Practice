@@ -27,4 +27,10 @@ public class StudentService {
 		String msg=dao.updateData(s,id);
 		return msg;
 	}
+	
+	public Student fetchSingleRecord(int id) {
+		Student s= dao.fetchSingleRecord(id);
+		
+		return s;
+	}
 }

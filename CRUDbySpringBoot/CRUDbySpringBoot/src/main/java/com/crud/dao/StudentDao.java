@@ -51,4 +51,18 @@ public class StudentDao {
 		ss.close();
 		return "Data updated";
 	}
+	
+	public Student fetchSingleRecord( int id) {
+		Session ss=sf.openSession();
+		Transaction ts=ss.beginTransaction();
+		
+		Student s1=ss.get(Student.class, id);
+		
+		
+		ts.commit();
+		ss.close();
+		return s1;
+	}
+	
+	
 }
