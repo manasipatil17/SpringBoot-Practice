@@ -1,12 +1,20 @@
 package com.crud.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.crud.CruDbySpringBootApplication;
 import com.crud.entity.Student;
+
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
+
 
 @Repository
 public class StudentDao {
@@ -63,6 +71,23 @@ public class StudentDao {
 		ss.close();
 		return s1;
 	}
+	
+//	public void fetchAllRecords(Student s) {
+//		Session ss= sf.openSession();
+//		Transaction ts = ss.beginTransaction();
+//		
+//		HibernateCriteriaBuilder cb= ss.getCriteriaBuilder();
+//		CriteriaQuery<Object> cq= cb.createQuery();
+//		Root<Student> r= cq.from(Student.class);
+//		cq.select(r);
+//		Query<Object> q=ss.createQuery(cq);
+//		List<Object> l=q.getResultList();
+//		
+//		for (Student s : l) {
+//			
+//		}
+//		
+//	}
 	
 	
 }
