@@ -1,0 +1,18 @@
+package com.eduTrack.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.eduTrack.dao.StudentDao;
+import com.eduTrack.entities.Student;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentDao dao;
+	
+	public Student createStudent(Student student) {
+		return dao.createStudent(student);
+	}
+}
