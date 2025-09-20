@@ -12,16 +12,16 @@ public class StudentDao {
 
     @Autowired
 	private SessionFactory factory;
-	public Student createStudent(Student student) {
-		
+    
+	public Student createStudent(Student student) {	
 		Session session= null;
 		Student s = null;
 		
 		try {
 		session = factory.openSession();
-		Transaction tr=session.beginTransaction();
+		Transaction ts=session.beginTransaction();
 		session.persist(student);
-		tr.commit();
+		ts.commit();
 		s=student;
 		}
 		catch(Exception e) {
@@ -32,5 +32,32 @@ public class StudentDao {
 		}
 		return s;
 	
+	}
+	
+	public String deleteStudent(Long id) {
+		Session session=null;
+		String msg=null;
+		
+		try {
+		 session= factory.openSession();
+		Transaction ts = session.beginTransaction();
+		Student student = session.get(Student.class, id);
+	   if(student !=null) {
+		session.remove(student);
+		ts.commit();
+		msg="row deleted...";
+	   }
+	   else {
+		   msg="Id not exists...";
+	   }
+		}
+		catch(Exception e) {
+		e.printStackTrace();
+		}
+		finally{
+			session.close();
+		}
+		
+		return msg;
 	}
 }
