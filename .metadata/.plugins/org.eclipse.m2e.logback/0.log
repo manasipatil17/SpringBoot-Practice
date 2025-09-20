@@ -3397,3 +3397,27 @@
 2025-09-20 11:33:29,902 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-09-20 11:33:29,908 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-09-20 11:33:29,911 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:34:36,644 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:34:36,655 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:34:36,657 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:34:41,747 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:34:41,755 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:34:41,758 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:35:35,669 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:35:35,681 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:35:35,684 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:39:37,612 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:39:37,622 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:39:37,626 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:39:57,177 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:39:57,187 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:39:57,190 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:40:18,221 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:40:18,229 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:40:18,231 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:40:32,455 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:40:32,463 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:40:32,466 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
+2025-09-20 11:41:08,923 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-20 11:41:08,932 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-20 11:41:08,935 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\DELL\OneDrive\Desktop\Manasi Practice\The kiran Academy Phase 2\SpringBoot Workspace\eduTrack\src\test\resources
