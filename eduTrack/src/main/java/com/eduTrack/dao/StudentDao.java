@@ -135,7 +135,21 @@ public class StudentDao {
 		        session.close();
 			}
 		        return list;
-			
 	}
+	
+	public List<Student> getAllStudentsById(List<Long> studentIds) {
+		Session session = null;
+		List<Student> students = null;
+		try {
+			session = factory.openSession();
+			students = session.byMultipleIds(Student.class).multiLoad(studentIds);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return students;
+	}
+
 	
 }

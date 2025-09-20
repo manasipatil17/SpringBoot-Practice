@@ -47,4 +47,9 @@ public class StudentController {
 		return studentService.getAllStudents();
 	}
 
+	@GetMapping("/getAllStudentsById")
+	public List<Student> getAllStudentsById(List<Long> studentIds) {{
+		return studentService.getAllStudentsById(studentIds);
+	}
+	}
 }
