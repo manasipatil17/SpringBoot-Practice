@@ -15,4 +15,16 @@ public class StudentService {
 	public Student createStudent(Student student) {
 		return dao.createStudent(student);
 	}
+	
+	public String deleteStudent(long id) {
+		return dao.deleteStudent(id);
+	}
+	
+	public Student getStudentById(long id) {
+		return dao.getStudentById(id);
+	}
+	
+	public String updateStudent(Student s, long id) {
+		return dao.updateData(s, id);
+	}
 }

@@ -60,4 +60,47 @@ public class StudentDao {
 		
 		return msg;
 	}
+	
+	public Student getStudentById(long id) {
+		
+		Session session=null;
+		Student student =null;
+		
+		try {
+		session = factory.openSession();
+		Transaction ts = session.beginTransaction();
+		student =session.get(Student.class, id);
+		ts.commit();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+		session.close();
+		}
+		return student;
+	}
+	
+	public String updateData(Student s, long id) {
+		Session session=null;
+		Student s1=null;
+		try {
+		session=factory.openSession();
+		Transaction ts=session.beginTransaction();
+		
+		s1=session.get(Student.class, id);
+		s1.setName(s.getName());
+		s1.setEmail(s.getEmail());
+		session.merge(s1);
+		ts.commit();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+		session.close();
+		}
+		return "Data updated";
+	}
+	
 }
