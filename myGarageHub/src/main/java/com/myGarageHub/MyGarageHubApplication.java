@@ -8,6 +8,7 @@ public class MyGarageHubApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyGarageHubApplication.class, args);
+		System.err.println("Application started");
 	}
 
 }
