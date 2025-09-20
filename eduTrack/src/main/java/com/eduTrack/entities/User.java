@@ -7,12 +7,12 @@ import jakarta.persistence.Id;
 public class User {
 
 	@Id
-	String username;
-	String password;
-	String firstname;
-	String lastname;
-	String email;
-	String role;
+	private String username;
+	private String password;
+	private String firstname;
+	private String lastname;
+	private String email;
+	private String role;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
