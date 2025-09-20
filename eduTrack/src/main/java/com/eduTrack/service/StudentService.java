@@ -1,5 +1,7 @@
 package com.eduTrack.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +28,9 @@ public class StudentService {
 	
 	public String updateStudent(Student s, long id) {
 		return dao.updateData(s, id);
+	}
+	
+	public List<Student> getAllStudents(){
+		return dao.getAllStudents();
 	}
 }

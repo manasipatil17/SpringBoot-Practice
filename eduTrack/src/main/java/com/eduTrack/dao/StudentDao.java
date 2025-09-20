@@ -1,11 +1,18 @@
 package com.eduTrack.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.eduTrack.entities.Student;
+
+import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 @Repository
 public class StudentDao {
@@ -101,6 +108,34 @@ public class StudentDao {
 		session.close();
 		}
 		return "Data updated";
+	}
+	
+	public List<Student> getAllStudents(){
+			Session session = null;
+			List<Student> list=null;
+			
+			try {
+			session = factory.openSession();
+			Transaction ts = session.beginTransaction();
+			 CriteriaBuilder cb=session.getCriteriaBuilder();
+		        CriteriaQuery<Object> cq= cb.createQuery();
+		        Root<Student> root=cq.from(Student.class);
+		        cq.select(root);
+		        Query q= session.createQuery(cq);
+		        list=q.getResultList();
+		        for ( Student stud : list) {
+					System.out.println(stud);
+				}
+		        ts.commit();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+		        session.close();
+			}
+		        return list;
+			
 	}
 	
 }
