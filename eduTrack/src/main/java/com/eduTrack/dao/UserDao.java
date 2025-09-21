@@ -114,7 +114,7 @@ public class UserDao {
 			session = factory.openSession();
 			 CriteriaBuilder cb=session.getCriteriaBuilder();
 		        CriteriaQuery<Object> cq= cb.createQuery();
-		        Root<Student> root=cq.from(Student.class);
+		        Root<User> root=cq.from(User.class);
 		        cq.select(root);
 		        Query q= session.createQuery(cq);
 		        list=q.getResultList();
