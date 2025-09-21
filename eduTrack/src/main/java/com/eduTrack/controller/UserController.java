@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eduTrack.entities.User;
+import com.eduTrack.model.LoginRequest;
 import com.eduTrack.service.UserService;
 
 @RestController
@@ -64,6 +65,12 @@ public class UserController {
 	@GetMapping("/getAllFaculties")
 	public List<User> getAllFaculties() {
 	return service.getAllFaculties();	
+	}
+
+	@PostMapping("/loginUser")
+	public User loginUser(@RequestBody LoginRequest request) {
+		
+		return service.loginUser(request);
 	}
 
 }

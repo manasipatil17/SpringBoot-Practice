@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.eduTrack.entities.Student;
 import com.eduTrack.entities.User;
+import com.eduTrack.model.LoginRequest;
 
 import jakarta.persistence.Query;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -179,4 +180,26 @@ public class UserDao {
 		return list;
 	}
 
+	public User loginUser(LoginRequest request) {
+		Session session =null;
+		User user =null;
+		try {
+			session = factory.openSession();
+			user= session.get(User.class, request.getUsername());
+			
+			if(user != null) {
+				if(user.getPassword().equals(request.getPassword())) {
+					return user;
+				}
+			}
+				else {
+					return null;
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		
+		return null;
+	}
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.eduTrack.dao.UserDao;
 import com.eduTrack.entities.User;
+import com.eduTrack.model.LoginRequest;
 
 @Service
 public class UserService {
@@ -41,4 +42,9 @@ public class UserService {
 	public List<User> getAllFaculties() {
 	    return dao.getAllFaculties();
 	}
+	
+	public User loginUser(LoginRequest request) {
+		return dao.loginUser(request);
+	}
+
 }
