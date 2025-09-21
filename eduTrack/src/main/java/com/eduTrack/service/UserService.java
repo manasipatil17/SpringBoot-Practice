@@ -19,4 +19,8 @@ public class UserService {
 	public String deleteUserByUsername(String username) {
 		return dao.deleteUserById(username);
 	}
+	
+	public User updateUser(User user, String username) {
+		return dao.updateUser(user, username);
+	}
 }

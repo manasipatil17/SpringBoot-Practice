@@ -57,4 +57,30 @@ public class UserDao {
 		return msg;
 	}
 	
+	public User updateUser(User user, String username) {
+		
+		Session session = null;
+		User user1=null;
+		
+		try {
+		session=factory.openSession();
+		Transaction ts= session.beginTransaction();
+		user1=session.get(User.class, username);
+		user1.setFirstname(user.getFirstname());
+		user1.setLastname(user.getLastname());
+		user1.setEmail(user.getEmail());
+		user1.setPassword(user.getPassword());
+		user1.setRole(user.getRole());
+		session.merge(user1);
+		ts.commit();
+		session.close();
+		return user1;
+		}
+		catch(Exception e) {
+          e.printStackTrace();
+          session.close();
+          return null;
+		}
+		
+	}
 }
