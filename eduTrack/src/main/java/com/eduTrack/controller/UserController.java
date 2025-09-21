@@ -56,9 +56,14 @@ public class UserController {
 		return service.getAllUser();
 	}
 	
-	@GetMapping("getAllAdmins")
+	@GetMapping("/getAllAdmins")
 	public List<User> getAllAdmins() {
 		return service.getAllAdmins();
+	}
+	
+	@GetMapping("/getAllFaculties")
+	public List<User> getAllFaculties() {
+	return service.getAllFaculties();	
 	}
 
 }

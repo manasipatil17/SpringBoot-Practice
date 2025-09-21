@@ -37,4 +37,8 @@ public class UserService {
 	public List<User> getAllAdmins() {
 		return dao.getAllAdmins();
 	}
+	
+	public List<User> getAllFaculties() {
+	    return dao.getAllFaculties();
+	}
 }

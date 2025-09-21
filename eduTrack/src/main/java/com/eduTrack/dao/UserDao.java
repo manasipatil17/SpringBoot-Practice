@@ -154,5 +154,29 @@ public class UserDao {
 		return list;
 	}
 
+	public List<User> getAllFaculties() {
+		Session session = null;
+		List<User> list = null;
+		try {
+			session = factory.openSession();
+			 CriteriaBuilder cb=session.getCriteriaBuilder();
+		        CriteriaQuery<Object> cq= cb.createQuery();
+		        Root<User> root=cq.from(User.class);
+		        
+		        cq.select(root).where(cb.equal(root.get("role"), "faculty"));
+		        Query q= session.createQuery(cq);
+		        
+		        list=q.getResultList();
+//		        for ( User user : list) {
+//					System.out.println(user);
+//				}	
 	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+
 }
