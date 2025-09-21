@@ -1,12 +1,20 @@
 package com.eduTrack.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.eduTrack.entities.Student;
 import com.eduTrack.entities.User;
+
+import jakarta.persistence.Query;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 @Repository
 public class UserDao {
@@ -81,6 +89,45 @@ public class UserDao {
           session.close();
           return null;
 		}
-		
 	}
+	
+	public User getUserByUsername(String username) {
+		Session session = null;
+		User user = null;
+		try {
+			session = factory.openSession();
+			user = session.get(User.class, username);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			session.close();
+		}
+		return user;
+	}
+
+	public List<User> getAllUser() {
+		Session session = null;
+		List<User> list = null;
+		try {
+			session = factory.openSession();
+			 CriteriaBuilder cb=session.getCriteriaBuilder();
+		        CriteriaQuery<Object> cq= cb.createQuery();
+		        Root<Student> root=cq.from(Student.class);
+		        cq.select(root);
+		        Query q= session.createQuery(cq);
+		        list=q.getResultList();
+		        for ( User user : list) {
+					System.out.println(user);
+				}	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+
+	
 }

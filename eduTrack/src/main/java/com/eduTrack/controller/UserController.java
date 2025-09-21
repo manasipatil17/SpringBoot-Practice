@@ -1,9 +1,12 @@
 package com.eduTrack.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -40,6 +43,17 @@ public class UserController {
 	@PutMapping("/updateUser/{username}")
 	public User updateUser(@RequestBody User user,@PathVariable String username) {
 		return service.updateUser(user, username);
+	}
+	
+	@GetMapping("/getUserByUsername/{username}")
+	public User getUserByUsername(@PathVariable String username) {
+		return service.getUserByUsername(username);
+
+	}
+
+	@GetMapp
+	public List<User> getAllUser() {
+		return service.getAllUser();
 	}
 
 }

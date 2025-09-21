@@ -1,5 +1,7 @@
 package com.eduTrack.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +24,13 @@ public class UserService {
 	
 	public User updateUser(User user, String username) {
 		return dao.updateUser(user, username);
+	}
+	
+	public User getUserByUsername(String username) {
+	return dao.getUserByUsername(username);
+	}
+	
+	public List<User> getAllUser() {
+		return dao.getAllUser();
 	}
 }
