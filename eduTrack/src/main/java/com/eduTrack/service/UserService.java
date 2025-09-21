@@ -15,4 +15,8 @@ public class UserService {
 	public User registerUser(User user) {
 		return dao.registerUser(user);
 	}
+	
+	public String deleteUserByUsername(String username) {
+		return dao.deleteUserById(username);
+	}
 }

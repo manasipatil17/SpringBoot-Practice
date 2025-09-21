@@ -2,6 +2,7 @@ package com.eduTrack.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -34,5 +35,26 @@ public class UserDao {
 		return null;
 	}
 
+	public String deleteUserById(String username) {
+		Session session=null;
+		String msg =null;
+		
+		try {
+		session=factory.openSession();
+		Transaction ts=session.beginTransaction();
+		User user=session.get(User.class, username);
+		session.remove(user);
+		msg="user row deleted...";
+		ts.commit();
+		}
+		catch(Exception e) {
+			msg=null;
+			e.printStackTrace();
+		}
+		finally {
+		session.close();
+		}
+		return msg;
+	}
 	
 }
