@@ -35,7 +35,6 @@ public class SubjectDao {
         query.select(root).where(builder.equal(root.get("name"), subject.getName()));
 
         List<Subject> list = session.createQuery(query).getResultList();
-
         if (list.isEmpty()) {
             session.persist(subject);
             ts.commit();
@@ -53,7 +52,27 @@ public class SubjectDao {
         }
     }
     return sub;
+	}
 	
-
+	public String deleteSubject(long id) {
+		
+		Session session =null;
+		String msg=null;
+		
+		try {
+		session=factory.openSession();
+	    Transaction ts =session.beginTransaction();
+	    Subject sub=session.get(Subject.class, id);
+	    session.remove(sub);
+	    msg="row deleted...";
+	    ts.commit();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+	    session.close();
+		}
+	    return msg;
 	}
 }

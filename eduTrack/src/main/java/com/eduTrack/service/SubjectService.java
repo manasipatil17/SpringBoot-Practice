@@ -15,4 +15,9 @@ public class SubjectService {
 	public Subject createSubject(Subject subject) {
 		return dao.createSubject(subject);
 	}
+	
+	public String deleteSubject(long id) {
+		return dao.deleteSubject(id);
+	}
 }
+
