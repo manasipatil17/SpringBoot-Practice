@@ -44,7 +44,7 @@ public class SubjectController {
 		return service.getSubjectById(id);
 	}
 	
-	@GetMapping("/get-all-subjects")
+	@GetMapping("/getAllSubjects")
 	public List<Subject> getAllSubjects() {
 		return service.getAllSubjects();
 	}
