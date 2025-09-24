@@ -19,5 +19,11 @@ public class SubjectService {
 	public String deleteSubject(long id) {
 		return dao.deleteSubject(id);
 	}
+	
+public Subject updateSubject(Subject subject, long id) {
+		
+		return dao.updateSubject(subject, id);
+	}
+
 }
 

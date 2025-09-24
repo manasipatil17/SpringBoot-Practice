@@ -75,4 +75,26 @@ public class SubjectDao {
 		}
 	    return msg;
 	}
+	
+	public Subject updateSubject(Subject subject, long id) {
+		Session session = null;
+		Subject sub=null;
+		
+		try {
+			session =factory.openSession();
+			Transaction ts= session.beginTransaction();
+			session.get(Subject.class, id);
+			sub.setName(subject.getName());
+			session.merge(sub);
+			ts.commit();
+			sub=subject;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			session.close();
+		}
+		return sub;
+	}
 }
