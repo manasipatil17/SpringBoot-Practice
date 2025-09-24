@@ -1,7 +1,10 @@
 package com.eduTrack.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,5 +39,16 @@ public class SubjectController {
 		return service.updateSubject(subject, id);
 	}
 
+	@GetMapping("/geSubjectById/{id}")
+	public Subject getSubjectById(@PathVariable long id) {
+		return service.getSubjectById(id);
+	}
+	
+	@GetMapping("/get-all-subjects")
+	public List<Subject> getAllSubjects() {
+		return service.getAllSubjects();
+	}
+
+	
 }
 

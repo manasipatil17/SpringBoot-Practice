@@ -1,5 +1,7 @@
 package com.eduTrack.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,16 @@ public Subject updateSubject(Subject subject, long id) {
 		
 		return dao.updateSubject(subject, id);
 	}
+
+public Subject getSubjectById(long subjectId) {
+	
+	return dao.getSubjectById(subjectId);
+}
+
+public List<Subject> getAllSubjects() {
+	
+	return dao.getAllSubjects();
+}
 
 }
 

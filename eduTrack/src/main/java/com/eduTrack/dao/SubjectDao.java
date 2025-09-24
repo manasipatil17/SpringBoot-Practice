@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.eduTrack.entities.Student;
 import com.eduTrack.entities.Subject;
 import com.eduTrack.entities.User;
 
@@ -97,4 +98,46 @@ public class SubjectDao {
 		}
 		return sub;
 	}
+	
+	public Subject getSubjectById(long subjectId) {
+		Session session = null;
+		Subject subject = null;
+		try {
+			session = factory.openSession();
+			subject = session.get(Subject.class, subjectId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return subject;
+	}
+
+	public List<Subject> getAllSubjects(){
+		Session session = null;
+		List<Subject> list=null;
+		
+		try {
+		session = factory.openSession();
+		Transaction ts = session.beginTransaction();
+		 CriteriaBuilder cb=session.getCriteriaBuilder();
+	        CriteriaQuery<Object> cq= cb.createQuery();
+	        Root<Subject> root=cq.from(Subject.class);
+	        cq.select(root);
+	        Query q= session.createQuery(cq);
+	        list=q.getResultList();
+	        for ( Subject sub : list) {
+				System.out.println(sub);
+			}
+	        ts.commit();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+	        session.close();
+		}
+	        return list;
+}
+
 }
