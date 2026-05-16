@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🎓 Student Management System</h1>
+
+        <!-- Form -->
+        <div class="form-section">
+
+            <input type="hidden" id="studentId">
+
+            <input type="text" id="name" placeholder="Enter Student Name">
+
+            <input type="text" id="city" placeholder="Enter City">
+
+            <button onclick="saveStudent()">Save Student</button>
+
+            <button onclick="updateStudent()">Update Student</button>
+
+        </div>
+
+        <!-- Search -->
+        <div class="search-section">
+
+            <input type="number" id="searchId" placeholder="Enter Student ID">
+
+            <button onclick="findStudent()">Find Student</button>
+
+        </div>
+
+        <!-- Student Table -->
+        <div class="table-section">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
