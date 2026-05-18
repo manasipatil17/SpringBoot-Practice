@@ -14,7 +14,7 @@ public class StudentService {
 	StudentRepository repo;
     
     public Student saveStudent(Student s) {
-    	Student s1 =new Student();
+    	Student s1 = new Student();
     	s1.setName(s.getName());
     	s1.setCity(s.getCity());
     	return repo.save(s1);
